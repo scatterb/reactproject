@@ -27,7 +27,7 @@ class Navbar extends Component {
     return (
       <div className="navbar">
         <ul>
-          {makers.map(function(maker, i) {
+          {makers.map(function (maker, i) {
             return getMakerPages(maker, i)
           })}
         </ul>
@@ -37,8 +37,44 @@ class Navbar extends Component {
 }
 
 function getMakerPages(maker, i) {
-  return <a href={i}><li>{maker}</li></a>;
+  return <li onClick={getContent.bind(maker)} key={i}>{maker}</li>;
+  //return <li>{maker}</li>;
 }
 
+function getContent(e) {
+  ReactDOM.render(
+    <AuthorContent name={this} />,
+    document.getElementById('content')
+  );
+}
+
+class Content extends Component {
+  render() {
+    return (
+      <div className="content">
+        <p className="App-intro">
+          testi
+        </p>
+      </div>
+    );
+  }
+}
+
+class AuthorContent extends Component {
+  render() {
+    return (
+      <div className="content">
+        <p>
+          {this.props.name}
+        </p>
+      </div>
+    );
+  }
+}
+
+
+
+
+
 //export default App;
-export { App, Navbar };
+export { App, Navbar, Content, AuthorContent };

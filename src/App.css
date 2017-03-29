@@ -32,11 +32,10 @@
   display: flex;
 }
 
-.navbar a {
+.navbar li {
   margin: 0 9%;
   padding-top: 20px;
-  text-decoration: none;
-  color: inherit;
+  cursor:pointer;
 }
 
 .navbar a:hover {
