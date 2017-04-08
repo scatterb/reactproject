@@ -47,8 +47,7 @@ var ChecklistList = React.createClass({
         var createItem = function(itemText) {
             return (
                 <div>
-                    <ChecklistListItem>{itemText}</ChecklistListItem>
-                    
+                    <ChecklistListItem>{itemText}</ChecklistListItem>  
                 </div>
             );
         };
