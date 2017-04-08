@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'; // Needed for THE FORM
 
 export default class Content extends Component {
     render() {
         return (
             <div>
                 <p>Jussin puolikas</p>
-                <TodoApp />
+                <ChecklistApp />
             </div>
         );
     }
 }
 
-// TODO-APP
-var TodoApp = React.createClass({
+// CHECKLIST APP
+var ChecklistApp = React.createClass({
     getInitialState: function() {
         return {items: []}; // Initially a blank list
     },
@@ -20,47 +21,57 @@ var TodoApp = React.createClass({
         var allItems = this.state.items.concat([newItem]); // Join new items to an array
         this.setState({items: allItems});
     },
-    render: function() {
+    render: function() { // Renders all the below components
         return (
             <div>
-                <TodoBanner/>
-                <TodoList items={this.state.items}/>
-                <TodoForm onFormSubmit={this.updateItems}/>
+                <ChecklistBanner/>
+                <ChecklistList items={this.state.items}/>
+                <ChecklistForm onFormSubmit={this.updateItems}/>
             </div>
         );
     }
 });
 
-// TODO BANNER- & LIST
-var TodoBanner = React.createClass({
+// ----------------------------- // CHECKLIST BANNER \\ -----------------------------------
+var ChecklistBanner = React.createClass({
     render: function() {
         return (
-            <h3>TODO</h3>
+            <h3>MUISTILISTA</h3>
         );
     }
 });
-var TodoList = React.createClass({
+
+// THE LIST
+var ChecklistList = React.createClass({
     render: function() {
         var createItem = function(itemText) {
             return (
-                <TodoListItem>{itemText}</TodoListItem>
+                <div>
+                    <ChecklistListItem>{itemText}</ChecklistListItem>
+                    
+                </div>
             );
         };
         return <ul>{this.props.items.map(createItem)}</ul>
     }
 });
 
-// TODO LIST ITEMS
-var TodoListItem = React.createClass({
+// THE ITEMS
+var ChecklistListItem = React.createClass({
     render: function() {
         return (
-            <li>{this.props.children}</li>
+            <li>{this.props.children}<button onclick="deleteFunction()"> X </button></li>
         );
     }
 });
 
-// TODO FORM
-var TodoForm = React.createClass({
+
+
+
+
+
+// THE FORM
+var ChecklistForm = React.createClass({
     getInitialState: function() {
         return {item: ""};
     },
@@ -68,7 +79,7 @@ var TodoForm = React.createClass({
         e.preventDefault();
         this.props.onFormSubmit(this.state.item);
         this.setState({item: ""});
-        React.findDOMNode(this.refs.item).focus();
+        ReactDOM.findDOMNode(this.refs.item).focus();
         return;
     },
     onChange: function(e) {
@@ -79,8 +90,8 @@ var TodoForm = React.createClass({
     render: function() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" ref="item" onChange={this.onChange} value={this.state.item}/>
-                <input type="submit" value="add" />
+                <input type="text" placeholder="Osta kaljaa" ref="item" onChange={this.onChange} value={this.state.item}/>
+                <input type="submit" value=">" />
             </form>
         );
     }
