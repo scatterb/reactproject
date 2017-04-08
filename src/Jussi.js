@@ -59,15 +59,10 @@ var ChecklistList = React.createClass({
 var ChecklistListItem = React.createClass({
     render: function() {
         return (
-            <li>{this.props.children}<button onclick="deleteFunction()"> X </button></li>
+            <li>{this.props.children}<button onclick> X </button></li>
         );
     }
 });
-
-
-
-
-
 
 // THE FORM
 var ChecklistForm = React.createClass({
