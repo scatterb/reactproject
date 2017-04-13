@@ -11,3 +11,45 @@ ul {
 a {
   text-decoration:none;
 }
+
+.lauta-rivi:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.tilanne {
+  margin-bottom: 10px;
+}
+
+.nelio {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.nelio:focus {
+  outline: none;
+}
+
+.kbd-navigation .nelio:focus {
+  background: #ddd;
+}
+
+.peli {
+  display: flex;
+  flex-direction: row;
+}
+
+.peli-info {
+  margin-left: 20px;
+}
