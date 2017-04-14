@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as Playlists from './playlists';
 import Youtube from 'react-youtube';
+import FileReaderInput from 'react-file-reader-input';
 
 export default class Content extends Component {
   render() {
@@ -10,6 +11,13 @@ export default class Content extends Component {
         <input type="checkbox" onClick={togglePlaylist.bind("dubstep")} name="playlists" id="dubstep" value="Dubstep"/>Dubstep <br />
         <input type="checkbox" onClick={togglePlaylist.bind("dnb")} name="playlists" id="dnb" value="Dnb"/>DnB <br />
         <input type="checkbox" onClick={togglePlaylist.bind("futurebass")} name="playlists" id="futurebass" value="Futurebass"/>Future bass <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("drumstep")} name="playlists" id="drumstep" value="Drumstep"/>DrumStep <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("harddance")} name="playlists" id="harddance" value="Harddance"/>Hard Dance <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("trap")} name="playlists" id="trap" value="Trap"/>Trap <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("electronic")} name="playlists" id="electronic" value="Electronic"/>Electronic <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("indie")} name="playlists" id="indie" value="Indie"/>Indie <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("house")} name="playlists" id="house" value="House"/>House <br />
+        <input type="checkbox" onClick={togglePlaylist.bind("electro")} name="playlists" id="electro" value="Electro"/>Electro <br />
       </div>   
     );
   }
@@ -30,7 +38,7 @@ function togglePlaylist() {
     }
   }
   file.send(null);*/
-  // Tämä koodi toimisi, jos käytettäisiin esim pelkkää jquerya tai ihan vain vanilla javascriptiä, mutta reactin reititysprotokollat tuhoavat tämän toimivuuden.
+  // Yllä oleva koodi toimisi, jos pistäisimme tämän hostingiin, ja tekisimme pari muutosta. jätän sen vain tänne, jotta on todiste siitä, että tätä ratkaisua kokeiltiin.
   //  Tästä syystä joudun tekemään tämän hieman eri lähestymistavalla.
   
   var checkboxes = document.getElementsByName('playlists');
@@ -72,3 +80,4 @@ function randomizeSong(pl, total) {
   var current = pl[randint];
   return current;
 }
+
