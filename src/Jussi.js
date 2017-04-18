@@ -17,11 +17,11 @@ class TaskList extends React.Component {
     constructor(props) {
         super(props);
         this.state =  {
-            input: "",
-            tasks: [{ // Tehdään tasks-niminen taulukko.
-                value: "Housut jalkaan", // Taulukossa on valmiiksi yksi arvo.
-                id: Date.now() // Jokaiselle taulukon arvolle annetaan uniikki id-arvo, määrä millisekunteja päivämäärästä 1.1.1970 tähän päivään asti.
-            }]
+            input : "",
+            tasks: [ // Tehdään tasks-niminen taulukko.
+                // value: "Housut jalkaan", // Taulukossa on valmiiksi yksi arvo.
+                // id: Date.now() // Jokaiselle taulukon arvolle annetaan uniikki id-arvo, määrä millisekunteja päivämäärästä 1.1.1970 tähän päivään asti.
+            ]
         };
         // "Sidonta" on pakollinen, jotta this-avainsanaa voidaan käyttää myöhemmin.
         this.addTask = this.addTask.bind(this);
@@ -84,8 +84,9 @@ class TaskList extends React.Component {
                         value={this.state.input}
                         onChange={this.handleInput}
                         onKeyDown={this.handleInput}
-                        ref={(input) => { this.taskInput = input; }} />
-                    <button onClick={this.addTask}>Add</button>
+                        ref={(input) => { this.taskInput = input; }}
+                        placeholder="Osta maitoa" />
+                    <button onClick={this.addTask}>Lisää</button>
                 </div>
             </div>
         )
@@ -94,8 +95,7 @@ class TaskList extends React.Component {
 
 const Task = ({value, onClick, deleted}) => (
     <div className={`task ${deleted ? "deleted" : ""}`} >
-        <button className="remove" onClick={onClick}>×</button>
-        <div>{value}</div>
+        <button className="remember"onClick={onClick}>{value}</button>
 
     </div>
 );
