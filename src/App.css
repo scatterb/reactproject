@@ -117,3 +117,12 @@ input[type="checkbox"] {
 #indie {background-image: url('img/nudisco.png');}
 #house {background-image: url('img/house.png');}
 #electro {background-image: url('img/electro.png');}
+
+.remember {
+  width: 200px;
+}
+
+.remember:hover {
+    border-style: solid;
+    border-color: #1ab2ff
+}
