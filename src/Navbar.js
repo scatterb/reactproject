@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as Content from './Content';
-import Matias from './Matias';
+import Playlister from './Playlister';
 import Santeri from './Santeri';
 import Jussi from './Jussi';
 import Henri from './Henri';
@@ -10,7 +10,7 @@ import './App.css';
 const makers = ['MusaMankeli', 'Tehtävälista', 'Ristinolla'];
 
 const makerPaths = {
-  'MusaMankeli': Matias,
+  'MusaMankeli': Playlister,
   'Henri': Henri,
   'Tehtävälista': Jussi,
   'Ristinolla': Santeri
@@ -50,15 +50,3 @@ function getContent(e) {
   );
 }
 
-
-class AuthorContent extends Component {
-  render() {
-    return (
-      <div className="content">
-        <p>
-          {this.props.name}
-        </p>
-      </div>
-    );
-  }
-}

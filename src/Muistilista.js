@@ -4,7 +4,6 @@ export default class Content extends Component {
     render() {
         return (
             <div>
-                <p>Jussin puolikas</p>
                 <TaskList />
             </div>
         );

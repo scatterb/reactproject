@@ -5,10 +5,7 @@ export default class Content extends Component {
     render() {
         return (
             <div>
-                <p>Santerin puoli</p>
-                <div>
-                    <Peli />
-                </div>
+                <Peli />
             </div>
 
         );
@@ -96,11 +93,11 @@ class Peli extends React.Component {
     }
 }
 
-
+/*
 ReactDOM.render(
     <Peli />,
     document.getElementById('content')
-);
+);*/
 
 function laskeVoittaja(neliot) {
     const lines = [
