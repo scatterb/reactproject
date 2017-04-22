@@ -117,3 +117,46 @@ input[type="checkbox"] {
 #indie {background-image: url('img/nudisco.png');}
 #house {background-image: url('img/house.png');}
 #electro {background-image: url('img/electro.png');}
+
+.remember {
+  width: 200px;
+}
+
+.remember:hover {
+    border-style: solid;
+    border-color: #1ab2ff
+}
+
+#musamankeli {
+  display: block;
+  transition: 0.5 ease-in-out;
+}
+
+#musamankelihidden {
+  display: none;
+  transition: 0.5 ease-in-out;
+}
+
+.togglebutton {
+  padding: 25px 50px;
+  margin: 50px;
+  box-shadow: 0 0 10px 10px #424242;
+  font-size: 24px;
+  font-weight: bold;
+  float: right;
+}
+
+#closer:after {
+  content: "Sulje";
+}
+
+#opener:after {
+  content: "Avaa";
+}
+
+#lista {
+  float: left;
+}
+#ristinolla {
+  float: right;
+}

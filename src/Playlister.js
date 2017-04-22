@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import * as Playlists from './playlists';
 import Youtube from 'react-youtube';
-import FileReaderInput from 'react-file-reader-input';
 
 export default class Content extends Component {
   render() {

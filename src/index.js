@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Navbar from './Navbar';
-import * as Content from './Content';
+import Playlister from './Playlister';
+import Muistilista from './Muistilista';
+import Ristinolla from './Ristinolla';
 import './index.css';
 
 ReactDOM.render(
@@ -11,11 +12,16 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <Navbar />,
-  document.getElementById('header')
+  <Playlister />,
+  document.getElementById('picker')
 );
 
 ReactDOM.render(
-  <Content.Content />,
-  document.getElementById('content')
+  <Muistilista />,
+  document.getElementById('lista')
+);
+
+ReactDOM.render(
+  <Ristinolla />,
+  document.getElementById('ristinolla')
 );
