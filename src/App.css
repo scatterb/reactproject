@@ -53,6 +53,7 @@ input[type="checkbox"] {
   background-repeat: no-repeat;
   background-size: cover;
   float: left;
+  margin: 0 0 0 20px;
 }
 
 .checkboxcontainerclicked {
@@ -65,6 +66,7 @@ input[type="checkbox"] {
   float: left;
 }
 
+
 .row {
   width: 100%;
   height: 250px;
@@ -72,11 +74,15 @@ input[type="checkbox"] {
 
 #youtubeContainer {
   height: 0;
+  padding: 20px;
 }
 
 #youtubeContainerOpen {
+  margin: auto;
   height: 400px;
+  width: 100%;
   transition: 0.5s ease-in-out;
+  padding: 20px;
 }
 
 #skipframehidden {
@@ -126,6 +132,10 @@ input[type="checkbox"] {
     border-style: solid;
     border-color: #1ab2ff
 }
+.remember:hover:after {
+   content: "X";
+   float: right;
+}
 
 #musamankeli {
   display: block;
@@ -156,7 +166,35 @@ input[type="checkbox"] {
 
 #lista {
   float: left;
+  padding: 20px;
 }
 #ristinolla {
   float: right;
+  padding: 20px;
 }
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+    html {
+      display:block;
+      margin: auto;
+      width: 50%;
+    }
+
+    #lista,
+    #ristinolla {
+      float: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+    #lista,
+    #ristinolla {
+      margin: auto;
+      width: 25%;
+      float: right;
+    }
+}
+
+

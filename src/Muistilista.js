@@ -19,7 +19,6 @@ class TaskList extends React.Component {
             input : "",
             tasks: [ // Tehdään tasks-niminen taulukko.
                 // value: "Housut jalkaan", // Taulukossa on valmiiksi yksi arvo.
-                // id: Date.now() // Jokaiselle taulukon arvolle annetaan uniikki id-arvo, määrä millisekunteja päivämäärästä 1.1.1970 tähän päivään asti.
             ]
         };
         // "Sidonta" on pakollinen, jotta this-avainsanaa voidaan käyttää myöhemmin.
@@ -29,14 +28,17 @@ class TaskList extends React.Component {
     }
 
     addTask() {
-        const newTask = {
+        if (this.state.input !== "" || null) { // Estetään tyhjän listaelementin luominen
+            const newTask = {
             value: this.state.input,
-            id: Date.now()
+            id: Date.now() // Jokaiselle taulukon arvolle annetaan uniikki id-arvo, määrä millisekunteja päivämäärästä 1.1.1970 tähän päivään asti.
         };
         this.setState(state => ({
             tasks: [...state.tasks, newTask],
             input: "" // Input täytyy "nollata" tässä, jotta uuden tehtävän lisättyä kenttään ei jää sen arvoa.
         }));
+        }
+        
     }
 
     handleInput(evt) {
@@ -68,13 +70,13 @@ class TaskList extends React.Component {
                     tasks: state.tasks.filter(t => t.id !== id)
                 }
             });
-        }, 1000);
+        }, 200);
     }
 
     render() {
         return (
             <div className="task-list">
-                <h1>MUISTILISTA</h1>
+                <h2>MUISTILISTA</h2>
 
                 {this.state.tasks.map(t => <Task key={t.id} {...t} onClick={() => this.removeTask(t.id)} />)}
 

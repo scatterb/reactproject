@@ -45,6 +45,7 @@ class Lauta extends React.Component {
         
         return (
             <div>
+                <h2>RISTINOLLA</h2>
                 <div className="tilanne">{tilanne}</div>
                 <div className="lauta-rivi">
                     {this.renderNelio(0)}
