@@ -54,3 +54,8 @@ a {
   margin-left: 20px;
 }
 
+#paintti {
+  height: 500px;
+  width: 500px;
+  z-index: 99999;
+}

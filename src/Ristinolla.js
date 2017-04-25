@@ -6,6 +6,7 @@ export default class Content extends Component {
         return (
             <div>
                 <Peli />
+                <a href="#" onClick={reset}>Reset</a>
             </div>
 
         );
@@ -128,3 +129,9 @@ function Nelio(props) {
     );
 }
 
+function reset() {
+    ReactDOM.render(
+    <Peli />,
+    document.getElementById('ristinolla')
+);
+}

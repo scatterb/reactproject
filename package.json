@@ -6,6 +6,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-file-reader-input": "^1.1.0",
+    "react-paint": "^1.0.1",
     "react-youtube": "^7.4.0"
   },
   "devDependencies": {
