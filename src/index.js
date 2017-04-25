@@ -9,11 +9,6 @@ import * as Paintti from './Paintti';
 import './index.css';
 
 ReactDOM.render(
-  <Paintti.Paintter/>,
-  document.getElementById('paintti')
-);
-
-ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
@@ -31,4 +26,9 @@ ReactDOM.render(
 ReactDOM.render(
   <Ristinolla />,
   document.getElementById('ristinolla')
+);
+
+ReactDOM.render(
+  <Paintti.Paintter/>,
+  document.getElementById('paintti')
 );

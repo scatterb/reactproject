@@ -16,9 +16,6 @@ export default class App extends Component {
         <p className="App-intro">
           Kun olet pienentänyt soittimen, voit pelata ristinollaa, ja mikäli kuulet hyvän biisin, voit lisätä sen muistilistaan
         </p>
-        <div id="toggler">
-          <a href="#" onClick={togglePlayer} className="togglebutton" id="closer"></a>
-        </div>
       </div>
     );
   }
